@@ -12,9 +12,9 @@ function question1() {
   let avprice = " ";
   for (let  i = 0; i < data.length; i++) {
     totalprice+=data[i].price;
-    avprice = totalprice/data.length
+    avprice = totalprice/data.length;
   }
-   console.log(avprice.toFixed(2));
+   console.log('The average price is '+avprice.toFixed(2));
 }
 
 
@@ -26,17 +26,17 @@ function question2 () {
   for( let i = 0; i < data.length; i++){
     if(data[i].price >= 14 && data[i].price <=18) {
       itemCost.push(data[i].title);
+      console.log(data[i].title);
       }
     }
-    console.log(itemCost);
-  }
 
+  }
 // 3: Which item has a "GBP" currency code? Display it's name and price.
 function question3 () {
 
   for (let i = 0; i < data.length; i++){
      if(data[i].currency_code === "GBP" ){
-       console.log(data[i].title+' '+'cost '+data[i].currency_code+data[i].price);
+       console.log(data[i].title+' '+'cost '+data[i].price+' pounds');
     }
   }
 }
@@ -45,16 +45,15 @@ function question3 () {
 // 4: Display a list of all items who are made of wood.
 function question4 () {
   // Answer:
-  for(let i = 0; i < data.length; i++){
-    for (let j = 0; j < data[i].materials.length; j++) {
-            if(data[i].materials[j] === 'wood'){
-              console.log(data[i].title + ' is made of wood.')
-            }
+    for(let i = 0; i < data.length; i++){
+       for (let j = 0; j < data[i].materials.length; j++){
+          if(data[i].materials[j] === 'wood'){
+            console.log(data[i].title + ' is made of wood.');
+          }
+
+       }
     }
-
-  }
 }
-
 
 // 5: Which items are made of eight or more materials?
 //    Display the name, number of items and the items it is made of.
@@ -80,5 +79,5 @@ function question5 () {
           selfMade+=1;
     }
   }
-  console.log( selfMade+' were made by their sellers');
+  console.log( selfMade+' items were made by their sellers');
 }
